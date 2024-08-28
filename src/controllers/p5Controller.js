@@ -13,7 +13,7 @@ const transferP5 = async (req, res) => {
 const deleteP5Transaction = async (req, res) => {
   try {
     await p5Service.deleteP5Transaction(req.params.id);
-    res.status(204).send();
+    res.status(201).json({ message: 'Transaction deleted' })
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
